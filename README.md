@@ -11,6 +11,7 @@ Note that this method does not support resuming the capacity. A Fabric Notebook 
 - Azure subscription
 - Fabric license
 - Azure Key Vault (with permissions to create and retrieve secrets)
+- Knowledge about Azure and Key Vault (Fundamental)
 
 ### Configuration
 1. Start by [creating a service principal (app registration) in Azure Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal). The following permissions on the Fabric Capacity resource are required to allow pausing, and are included in the `Fabric Administrator` role:
@@ -18,7 +19,7 @@ Note that this method does not support resuming the capacity. A Fabric Notebook 
     - Microsoft.Fabric/capacities/write
     - microsoft.fabric/capacities/suspend/action
     - microsoft.fabric/capacities/resume/action
-1. Create a [client secret for the service principal](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate#add-credentials). Then, create three Azure Key Vault Secrets:
+1. Create a [client secret for the service principal](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate#add-credentials). Then, create three Azure Key Vault Secrets manually in the Azure Portal:
     - client secret (just generated)
     - client id
     - tenant id
